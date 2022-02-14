@@ -1,0 +1,14 @@
+<body>
+    <textarea></textarea>
+    <button onclick="del()">삭제</button>
+
+    <script>
+        function del() {
+            const textarea = document.querySelector('textarea');
+            let text = textarea.value;
+            text = text.substring(0,text.length-1);
+            console.log(text);
+            textarea.value = text;
+        }
+    </script>
+</body>

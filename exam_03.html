@@ -1,0 +1,38 @@
+<body>
+    <script>
+        //exam 03 섭씨 화씨 전환.
+        let fTemp = 122;
+        let cTemp = 0;
+
+        cTemp = (fTemp-32)*(5/9);
+        console.log(cTemp);
+
+
+        //exam 04 백자리이하 버리기.
+        let num1 = 456;
+        let num2 = 111;
+
+        num1 = parseInt(num1/100).toFixed(0);
+        num2 = (num2/100).toFixed(0);
+        console.log(num1*100);
+        console.log(num2*100);
+
+        //exam 05 각 자리 합
+        let num = 12345;
+        let n1 = num % 10;
+        num = parseInt(num / 10)
+
+        let n2 = num % 10;
+        num = parseInt(num / 10)
+
+        let n3 = num % 10;
+        num = parseInt(num / 10)
+        let n4 =num % 10;
+
+        num = parseInt(num / 10)
+        let n5 = num % 10;
+        console.log(n1+n2+n3+n4+n5);
+        console.log(n1,n2,n3,n4,n5);
+        console.log(num);
+        </script>
+</body>

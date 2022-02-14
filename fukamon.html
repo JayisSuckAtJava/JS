@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        .enemie {
+            display: flex;
+            position: relative;
+            border: solid 0.5px lightgray;
+            height: 40px;
+            background-color: cornsilk;
+            align-items: center;
+        }
+        .enemie > div {
+            display: inline-block;
+            margin: 30px;
+        }
+        .enemie > p {
+            display: inline-block;
+            font-size: larger;
+            font-weight: bold;
+            padding: 15px;
+        }
+        .enemie_img {
+            display: inline-block;
+        position: relative;
+         left: 65vw;
+        }
+    </style>
 
 <body onkeydown="run(event)">
-    <h1>My First Web Page</h1>
-    <div>
-        <ul>
-            <li id="now">As</li>
-            /
-            <li value="a" id="full">Ds</li>
-        </ul>
+    <h1>뿌끼먼 베타</h1>
+    <div class="enemie">
+            <p>이름 : </p><div>김첨지</div><hr>
+            <p>현재 체력 :</p><div id="now">number</div><hr>
+            <p>최대 체력 :</p><div id="full">number</div><br>
+        </div>
+        <img src="./images/파이리.webp" class="enemie_img">
+    <div class="my">
+        <p>이름 : </p><div>삐각유</div><hr>
+            <p>현재 체력 :</p><div id="now">number</div><hr>
+            <p>최대 체력 :</p><div id="full">number</div><br>
     </div>
-
+    <img src="./images/피카츄.webp" class="my_img">
     <script>
         full = 5;
         now = 5;

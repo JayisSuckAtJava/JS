@@ -1,0 +1,31 @@
+<body>
+    <script>
+        let a=1;
+        let b=1;
+
+        // console.log(a==1 && b++ > 1); -- false 이고 1 , 2 임
+        console.log(a > 1 && b++ > 1); // 얘도 false 이지만 1 , 1 임
+        // && 연산자는 앞에 내용이 참일시에만 뒤에있는 내용을 읽음으로 ++ 같은 처리중 연산되는 것은
+        // &&에서 앞이 false 일 경우에 ++이 안돼어서 진행됨.
+        console.log(a > 1 & b++ > 1); // 얘는 0 이며 1 , 2 임
+        // & 연산자는 앞에 내용이 거짓일때도 뒤 내용을 실행함.
+        // 위에있는 내용들은 ||에도 동일하게 적용되며 |은 확인 전에도 처리됨
+        console.log( a== 1 || b++ > 1); // 그래서 이렇게 처리하면 true 에  1, 1
+        console.log( a > 1 || b++ > 1); // 렇기렇기떄문에 이거여야 false 에 1 ,2 
+        console.log( a == 1 | b++ > 1); // 이거슨 1 에 1, 2 이다. &&과 &의 차이와 같은 맥락이다.
+        console.log(a , b);
+
+
+        let score = prompt('점수');
+        // a c d f
+        let result = '';
+        // 90 이상이면 A 아니면 -> 70 이상일때 C 아니면 -> 60 이상일떄 D 아니면 F
+        result = (score >=90 ) ? 'A' :
+        (score >= 70 ? 'C' :
+        (score >= 60 ? 'D' : 'F') 
+        )
+        console.log(result)
+        
+
+    </script>
+</body>
