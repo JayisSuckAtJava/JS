@@ -1,0 +1,24 @@
+<body>
+<button onclick="run()">Button 1.</button>
+<button style="display: none;"></button>
+<button style="visibility: hidden;"></button>
+<button disabled style="width: 50px; height: 10pxlo;"></button>
+
+    <script>
+       let number = 10;
+        console.log(`1 number: ${number}`);
+        {
+            let number = 100;
+            console.log(`2 number: ${number}`);
+        }
+        console.log(`3 number: ${number}`);
+        console.log('3 number: '+number);
+        function run(){
+            const btns = document.querySelectorAll('button');
+            console.log(btns.length);
+            const html = `<button>${btns.length + 1}</button>`;
+            document.body.innerHTML += html;
+        }
+    </script>
+
+</body>
