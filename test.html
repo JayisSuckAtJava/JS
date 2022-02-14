@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<!-- script는 내부에 있는 요소를 읽어서 작동하기에 코드라인이 아랫쪽에 위치해야 한다.
+그게 시루면 window.onload(body를 다 읽은 경우)를 써서 사용가능. -->
+<head></head>
+
+<body onkeydown="run(event)">
+    <p id="demo">text</p>
+    <button type="button" onclick="change()">change</button>
+    <script>
+        document.getElementById("demo").innerHTML = "첫 화면";
+
+        function change() {
+            document.getElementById("demo").innerHTML = "change";
+        }
+        function run(event) {
+            console.log(event);
+            if (event.keyCode == 82) {
+                document.body.style.backgroundColor = 'yellow';
+            } else if (event.keyCode == 65) {
+                document.body.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

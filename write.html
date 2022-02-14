@@ -1,0 +1,17 @@
+<body>
+    <h2>My First Web Page</h2>
+    <p>My first paragraph.</p>
+    <button type="button" onclick="document.write('Well done')">
+        Try it
+    </button>
+
+    <button type="button" onclick="openPopup()">
+        Pop Up
+    </button>
+    <script>
+        function openPopup(){
+            const popup = window.open('', '', 'width=200px height=100px',);
+            popup.document.write('<input type="checkbox" value="닫기" id="close"><label for="close">Just check it Bitch</label></input>')
+        }
+    </script>
+</body>

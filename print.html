@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<style>
+    button {
+        background-color: yellow;
+    }
+</style>
+<!-- media 를 지정해서 해당 상태에서만 사용되는 css style을 정할수 있음. -->
+<style media="print">
+     button {
+         border: solid 3px blue;
+        background-color: red;
+    }
+    p {
+        display: none;
+    }
+</style>
+
+<body>
+    <button onclick="window.print()">
+        Print this page
+    </button>
+    <p>Cant print this</p>
+</body>
+
+</html>

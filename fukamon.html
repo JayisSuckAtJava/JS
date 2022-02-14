@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body onkeydown="run(event)">
+    <h1>My First Web Page</h1>
+    <div>
+        <ul>
+            <li id="now">As</li>
+            /
+            <li value="a" id="full">Ds</li>
+        </ul>
+    </div>
+
+    <script>
+        full = 5;
+        now = 5;
+        dmg = 1;
+
+        document.getElementById('full').innerHTML = full;
+        document.getElementById('now').innerHTML = now;
+
+        function run(event){
+            console.log(event);
+            if(event.keyCode == 87 ){
+                    now = now - dmg;
+                    document.getElementById('now').innerHTML = now;
+            }
+            if(now==0){
+                alert("적을 해치웠습니다.");
+            }
+        
+          /*  function attack(){
+                    now = now - dmg;
+                    document.getElementById('now').innerHTML = now;
+                }
+                attack;*/
+        }
+    </script>
+</body>
+<!-- w-87 a-65 d-68 s-83  -->
+</html>
