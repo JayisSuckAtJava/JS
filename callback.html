@@ -1,0 +1,14 @@
+<body>
+    <script>
+
+        //Business Logic = 실제 역할을 담당하는 펑션 = service
+        function quiz(answer, fnPrint) {if(answer){fnPrint('yes!!');} else{fnPrint('no!!');}}
+// 이런식으로 함수에서 파라미터와,입력값이 정해진 상태에서 -
+// 인자에 따른 함수를 넣고 그에 해당하는 결과 처리를 하는 펑션(함수)을    콜백 이라고 한 다.
+        function callback(result){
+            console.log(result);
+        }
+        quiz(true,callback); // 이런식으로 콜백 없이 화살표 함수로 바로 처리도 가능.
+        quiz(false, (res) => console.log(res) )
+    </script>
+</body>

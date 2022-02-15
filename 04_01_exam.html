@@ -1,0 +1,31 @@
+<body>
+
+    <script>
+
+        function check(){
+         const name =document.querySelector('[name="user_name"]').value;
+         console.log(name);
+         if(name==''){
+              alert('NAME 을 입력해주세요');
+         }else{
+            document.querySelector('[name="user_nick_name"]').value = name;
+         }
+        }
+// 강사님의 답. 쿼리셀렉터 잘 보고 개발자 도구 잘 봐라.
+        function check2(){
+            const name = document.querySelector('[name=user_name]');
+            const nick_name = document.querySelector('[name=user_nick_name]');
+            if(!name.value){
+                alert('name을 입력해주세여.');
+            }else if(!nick_name.value){
+                nick_name.value = name.value;
+            }
+        }
+    </script>
+    <form>
+        NAME : <input type='text' name='user_name'><br>
+        NICKNAME : <input type='text' name='user_nick_name'><br>
+        <input type='button' value='OK' onclick='check2()'>
+    </form>
+
+</body>

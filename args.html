@@ -1,0 +1,55 @@
+<body>
+    <script>
+        function printAll(...args) {
+            for (let i = 0; i < args.length; i++) {
+                console.log(args[i]);
+            }
+            for (const arg of args) {
+                console.log(arg);
+            }
+            //아래있는 2개가 원형
+            args.forEach(function(v,i,a){
+                console.log(v,i,a);
+            });
+            args.map(function(value,index,aray){
+                console.log(value);
+                console.log(index);
+                console.log(aray);
+            });
+            //이놈이 화살표 함수. Arrow Function. ==  (Parameter) => {}; or (Parameter) => console.log(Parameter)
+            // 화살표 함수 == java 람다식 = lambda 
+            // return 은 생략되어있음 => (x,y) => x+y; 하면 리턴값이 x+y임
+            args.forEach((arg) => console.log(arg));
+        }
+        printAll('java', 'script', 'html/css');
+
+        function printAll2(){
+            console.log(arguments);
+            // function 에 파라미터를 지정하지 않아도 arguments를 지정하면 받는 값을 쓸수있음.
+            for(let i=0; i<arguments.length;i++){
+                console.log(`아규먼츠스 라고 입력받은 ${i+1} 번째 값.${arguments[i]}`);
+            }
+        }
+        printAll2();
+        printAll2(1);
+        printAll2(1,2,3);
+
+
+    </script>
+</body>
+<!-- args 는 여러개의 인자를 받기에 Array.로 인식된다.
+    array를 자바스크립트에선 2가지 방법으로 변형하여 값으로 저장한다
+
+    x.forEach () 
+
+    x.map ()
+
+    우선 두개다 callbackfn 으로 파라미터를  받는다.
+    callback or callbackfn 동일
+    function(v ,i ,a){} 이렇게 받고
+    v는 value array의 값들을 저장
+    i는 index index의 번호를 저장
+    a는 array array 그 자체를 저장하여
+    3개중 원하는 인자를 사용하여 원하는 값을 사용함.
+    array = x
+    -->

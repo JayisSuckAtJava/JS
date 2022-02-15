@@ -1,0 +1,25 @@
+<body>
+    <script>
+        let isEnd =true;
+        let count=0;
+        while(isEnd){
+        const selected = [];
+        while (selected.length < 3) {
+            const num = parseInt(Math.random() * 45) + 1;
+            if (selected.indexOf(num) == -1) {
+                selected.push(num);
+            }
+            
+        }
+        selected.sort((a, b) => a - b);
+        console.log(selected);
+        const lotto = [1,8,16];
+        count++;
+        if(lotto==selected.toString()){
+            console.log('맞히기 성공');
+            console.log(count+'회 만에 성공..!');
+            isEnd =false;
+        }
+    }
+    </script>
+</body>

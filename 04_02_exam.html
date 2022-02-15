@@ -1,0 +1,43 @@
+<body>
+    <script>
+
+            function total(...args){
+                console.log(args)
+                let result=0;
+                if(args.length==0){
+                    for(let i=0; i<=10; i++){
+                    result = result+ i;
+                } 
+                }else {
+                    for(let i=0; i<args.length;i++){
+                        console.log(args[i]);
+                        result = result + args[i];
+                        console.log(result);
+                    }              
+            }
+                console.log(result);
+                return result;
+            }
+//              강사님 답 forEach로
+            function total1(...args){
+                let result=0;
+                if(args.length==0){
+                    for(let i=0; i<=10; i++){
+                        result+=i;
+                    }
+                    return result;
+                }
+                args.forEach((v)=>{
+                    console.log(v);
+                    result+=v;
+                });
+                return result;
+            }
+        var result1 = total();
+        console.log('result1 -> ' + result1);
+        var result2 = total(1, 2, 3);
+        console.log('result2 -> ' + result2);
+        var result3 = total(5, 6, 7, 8, 9);
+        console.log('result3 -> ' + result3);
+       </script>
+</body>

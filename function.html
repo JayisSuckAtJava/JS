@@ -1,0 +1,27 @@
+<body>
+    <script>
+        const getPosition = function(pos){
+        let latitude = pos.coords.latitude;
+        let longitude = pos.coords.longitude;
+           console.log(latitude,longitude);
+        };
+        navigator.geolocation.getCurrentPosition(getPosition);
+
+       /* navigator.geolocation.getCurrentPosition(function(pos) {
+           let latitude = pos.coords.latitude;
+           let longitude = pos.coords.longitude;
+           console.log(latitude,longitude);
+        });*/
+
+
+        function outer(){
+            console.log('outer!');
+            return function inner(){
+                console.log('inner!');
+            }
+        }
+       // const result = outer();
+       // result();
+       outer()();
+    </script>
+</body>
