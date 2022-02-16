@@ -1,0 +1,43 @@
+<body>
+    <script>//Shape 클래스를 상속받는 Rectangle, Triangle 클래스 작성
+        //        - draw(), getArea() 메소드 오버라이딩
+
+        class Shape {
+            constructor(width, height, color) {
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+            draw() {
+                console.log(`drawing ${this.color}`);
+            }
+            getArea() {
+                return this.width * this.height;
+            }
+        }
+
+        class Rectangle extends Shape {
+            draw() {
+                console.log('drawing blue')
+            }
+            getArea() {
+                console.log('getArea() => 400')
+            }
+        }
+
+        class Triangle extends Shape {
+            draw() {
+                console.log('draw() => 🔺')
+            }
+            getArea() {
+                console.log('getArea() => 200')
+            }
+        }
+        const re = new Rectangle(20,20,'blue');
+        const tr = new Triangle(10,20,'red');
+        re.draw();
+        re.getArea();
+        tr.draw();
+        tr.getArea();
+    </script>
+</body>

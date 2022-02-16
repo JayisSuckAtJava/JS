@@ -1,5 +1,6 @@
 <body>
     <script>
+        // ...args를 사용하면 입력하는 인자를 전부 args 에 순서대로 배열로 받음 <array>
         function printAll(...args) {
             for (let i = 0; i < args.length; i++) {
                 console.log(args[i]);
@@ -7,7 +8,7 @@
             for (const arg of args) {
                 console.log(arg);
             }
-            //아래있는 2개가 원형
+            //아래있는 2개가 원형 < forEach 나 map을 사용하는 원형 >
             args.forEach(function(v,i,a){
                 console.log(v,i,a);
             });

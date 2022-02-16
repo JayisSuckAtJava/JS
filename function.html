@@ -7,11 +7,11 @@
         };
         navigator.geolocation.getCurrentPosition(getPosition);
 
-       /* navigator.geolocation.getCurrentPosition(function(pos) {
+        navigator.geolocation.getCurrentPosition(function(pos) {
            let latitude = pos.coords.latitude;
            let longitude = pos.coords.longitude;
            console.log(latitude,longitude);
-        });*/
+        });
 
 
         function outer(){
@@ -20,8 +20,9 @@
                 console.log('inner!');
             }
         }
-       // const result = outer();
-       // result();
-       outer()();
+        // 함수는 자료형 이기에 값을 담을수 있다 제한없이.
+    const result = outer(); // 이럴경우 result 안에는 outer() 리턴이 들어감과 동시에 console.log또한 실행된다. 
+    result(); // 다시말해 result 안에는 function inner()가 들어가 있는거시다. 출력값은 inner!
+    outer()();// 이 경우는 outer()로 리턴을 부르자마자 ()를 해서 inner를 실행하는 거시다.
     </script>
 </body>

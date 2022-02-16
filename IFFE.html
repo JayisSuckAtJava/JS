@@ -1,0 +1,30 @@
+<body>
+    <script>
+        // IIFE 정의와 즉시 호출을 하는 기법. - closure 현상을 없애기 위해 사용.
+        //1. 내부에서 정의된 변수는 외부에서 접근 불가능. <지역변수>
+        var aName='';
+        (function(){
+            var aName='Kate';
+            console.log(aName);
+        })();
+        console.log(aName);
+
+
+            // Closure 현상 ( 지역 변수가 사라지지 않고 계속 기억되는 현상 )
+            function sequence() {
+                let seq = 0;
+                return function () { // 리턴이 함수
+                    return ++seq;    // 지역변수 seq에 접근
+                };
+            }
+
+            const s = sequence(); // sequence의 리턴값을 받는 s 함수
+            console.log(s());// 원래의 seq는 지역변수기에, 1로 유지되어야 하지만
+            console.log(s());// 리턴의 함수를 계속 접근할때 마다
+            console.log(s());// 해당 값을 기억하는 경우를 Closure라고 한 드아.
+            console.log(sequence()());// 이렇게 사용할경우 정상처럼 1이 뜸.
+            console.log(seq);// seq는 지역변수기에 외부에서 사용할 수 없는 상태가 맞음.
+            //
+
+    </script>
+</body>

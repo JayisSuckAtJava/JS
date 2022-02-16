@@ -1,0 +1,20 @@
+<body>
+    <script>
+        const obj = {
+            'pizza': '🍕',
+            'chicken': '🍗',
+            'meat': '🍖'
+        };
+// object 자료 저장 형태가 { key:value } 이기에 반복하여 출력하는 예정
+// key라는 변수를 선언하며 obj의 'key' 값을 출력하는 것임.
+// for (x in y)기능은 obj 가 배열혹은 오브젝트 일 경우에 내에있는 요소 횟수만큼 반복하며 x가 i처럼 1씩 증가함. 
+        for (key in obj) {
+            console.log(key);
+        }
+//  이런식으로 활용하면 k와 k를 가진 value를 뽑을수 있음.
+        for(let k in obj){
+            console.log(k,obj[k]);
+        }
+// 이것들을 for(in)이라 하고 Object만 사용되며 array(배열)인 경우는 for(of)로 동일하게 사용한다.
+    </script>
+</body>

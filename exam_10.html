@@ -1,0 +1,27 @@
+<body>
+    <script>
+        class User {// 입력받는 값에 따라 만드는 컨스트럭터를 생성.
+            // 입력받는 값에 대한 조건을 할때는. 생성자(컨스트럭터)내부가 아닌 외부에 set으로 설정함
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            //getter 와 setter중 1개라도 사용할때에도 둘다 만들어야 합니다.
+            get age(){
+                return this._age;
+            }
+            set age(value) {
+                if (value < 0) {
+                    value =0;
+                }
+                    this._age = value;
+            }
+        }
+
+        const user = new User('Steve', 'Job', -1);
+        console.log(user.age);
+        console.log(user._age);
+        console.log(user.firstName, user.lastName);
+    </script>
+</body>

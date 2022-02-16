@@ -1,0 +1,32 @@
+<body>
+    <script>
+        //이게 표현식 , 맨 뒤에 세미콜론붙이셈.
+        const simplePrint = function () {
+            console.log('표현식인거셈 simplePrint!');
+        };
+        //이건 선언식 , 맨 뒤에 세미콜론 안붙임.
+        function aSimplePrint(){
+            console.log('선언식인거셈 simplePrint!');
+        }
+        // 위에 2개는 함수의 생성의 2가지 식임, 아래는 효율성을 높이기 위한,
+        // 함수 사용 방법의 하나임 생성방법 아님. 아래꺼는 표현식, 화살표 함수임
+        // Java Lamba = 화살표 함수         화살표 함수는 선언식으로 거거거거거의 사용 안함.=> 인자로 어떠한 값을 넘길때만(함수 안에 파라미터로 사용<값을 저장 하고 넘길때만>)
+        const arrowSimplePrint = () => {console.log('화살표로 한 표현식인거셈!! simplePrint!');};
+
+        simplePrint();
+        aSimplePrint();
+        arrowSimplePrint();
+
+        function minus(a,b){
+            return a-b;
+        }
+        const aMinus = (a,b) => {return a-b;};
+        // 화살표 함수는 1줄만 사용할경우 중괄호를 생략가능, 동시에 해당 명령은 바로 리턴값으로 넘어감. 
+        const bMinus = (a,b) => console.log(a-b);
+
+        console.log(minus(3,4));
+        console.log(aMinus(3,4));
+        bMinus(3,4);
+        
+    </script>
+</body>

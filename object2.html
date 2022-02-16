@@ -1,0 +1,54 @@
+<body>
+    <script>
+        const obj ={
+            name : 'Mike',
+            address : {
+                si : '세종',
+                gu : '조치원',
+                dong : '신안리',
+            },
+            age : 30,
+            hobby : [
+                {
+                    name : '당구',
+                    desc : '3쿠션'
+                },
+                {
+                    name : '먹방',
+                    desc : '중국음식',
+                },
+                {
+                    name : '볼링',
+                    desc : 150,
+                },
+            ],
+        };
+
+        const gu = obj.address.gu;
+        console.log(gu);
+        console.log(obj.name);
+        console.log(obj.address);
+        console.log(obj['age']);
+        delete obj.age;
+        console.log(obj['age']);
+        obj.nickName = 'Mic';
+        console.log(obj['nickName']);
+
+        console.log(obj.hobby);
+        console.log(obj.hobby[0]);
+        console.log(obj.hobby[1].name);
+        console.log(obj.hobby[2].desc);
+
+        for(let i =0; i<obj.hobby.length; i++){
+            console.log(`제 취미는 ${obj.hobby[i].name} 이고- 보통 ${obj.hobby[i].desc}합니다.`);
+        }
+        for(i in obj.hobby){
+            console.log(`제 취미는 ${obj.hobby[i].name} 이고- 보통 ${obj.hobby[i].desc}합니다.`);
+        }
+
+        const job = obj.job;
+        console.log(job);
+        console.log('job' in obj);
+        console.log('name' in obj);
+    </script>
+</body>

@@ -6,11 +6,31 @@
     <div id="map" style="width:500px;height:400px;"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=408ce3d50a12b2d0b0631399c40bb3f6"></script>
     <script>
+    function setCenter(latitude, longitude) {
+        var moveLatLon = new kakao.maps.LatLng(latitude, longitude);
+        map.setCenter(moveLatLon);
+    }
+
+        navigator.geolocation.getCurrentPosition(
+        function (pos) {
+            let latitude = pos.coords.latitude;
+            let longitude = pos.coords.longitude;
+            console.log(latitude, longitude);
+            setCenter(latitude, longitude);
+        });
+            // 화살표 함수를 사용한 . 인자 1개라 생략 
+      /* navigator.geolocation.getCurrentPosition( pos=>{
+            let latitude = pos.coords.latitude;
+            let longitude = pos.coords.longitude;
+            console.log(latitude, longitude);
+            setCenter(latitude, longitude);
+        }); */
 
         var container = document.getElementById('map');
         var options = {
             center: new kakao.maps.LatLng(36.592, 127.29),
             level: 2
+            //36.592, 127.29
             // 20m 30 50 100 250 500 1km 2 4 8 16 32 64 128 최대
             // 1    2  3  4   5   6   7  8 9 10 11 12 13 14 14level
         };

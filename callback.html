@@ -8,6 +8,16 @@
         function callback(result){
             console.log(result);
         }
+        function callbacback(...args){
+        // 향상된 for문
+            for(const a of args){
+                console.log(a)
+            }// forEach 기본형
+            args.forEach(function(value,index,array){
+                console.log(value);
+            });// forEach + 1회용 화살표 함수
+            args.forEach((args)=>console.log(args));
+        }
         quiz(true,callback); // 이런식으로 콜백 없이 화살표 함수로 바로 처리도 가능.
         quiz(false, (res) => console.log(res) )
     </script>
