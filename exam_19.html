@@ -1,0 +1,25 @@
+<body>
+    <script> //수업에 등록(enrolled)되어 있는 학생의 정보 찾아내기
+            // Student.enrolled = true
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 28, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 66),
+            new Student('E', 18, true, 90),
+        ];
+
+        let result = students.filter((value)=>{
+            return value.enrolled==true;
+        })
+        result.forEach((value)=>{console.log(value)})
+        </script>
+</body>

@@ -1,0 +1,28 @@
+<body>
+    <script>
+        const array = ['🍕', '🍔', '🍟', '🌭', '🍖', '🍕'];
+        console.log(array.indexOf('🍔')); // 1
+        console.log(array.indexOf('🍙')); // -1
+        console.log(array.indexOf('🍖')); // 4
+        console.log(array.indexOf('🍕')); // 0 and 5 but only show 0 cuz is in front
+        let count =0;
+        array.forEach((v) => {
+            if (v == '🍕') {
+                console.log(v);
+            }
+        })
+        console.log(count);
+        
+        let idx=0;
+        count = 0;
+        while(true){
+            // indexOf(value,x) 는 x부터 value를 찾아라! 이다.
+            idx =array.indexOf(('🍕'),idx);
+            if(idx==-1)break;
+            console.log('피자는! :'+idx+' 에 있다!');
+            count++;
+            idx+=1;
+        }
+        console.log(count);
+    </script>
+</body>

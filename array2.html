@@ -1,0 +1,18 @@
+<body>
+    <script>
+        const animals =['🐶', '🐱', '🐷', '🐵', '🦝', '🐰'];
+        // array.pop()은 배열 제일 마지막 값을 제거함 + 리턴값이 그 마지막 값임.
+        const last = animals.pop();
+        // 그래서 이쥐랄로 하면 뺐다 넣고 last에 그거만 저장해 보리기~!
+        animals.push(last);
+        console.log(last);
+        console.log(animals);
+// pop과 동일하게 shift 도 있음. 근데 야는 unshift로 추가함
+        const first = animals.shift();
+        console.log(first);
+        animals.unshift(first);
+        console.log(animals);
+
+        // pop-push = 젤 끝 , shift-unshift = 젤 앞.
+    </script>
+</body>

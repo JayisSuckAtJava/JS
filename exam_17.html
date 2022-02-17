@@ -1,0 +1,13 @@
+<body>
+
+    <script>
+        const max = (array)=> {
+            let output = array[0];
+            array.forEach((v)=>{
+                output = v > output ? v : output;
+            });
+        return output;
+};
+        console.log(max([1, 2, 3, 4]));
+    </script>
+</body>

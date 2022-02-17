@@ -1,0 +1,29 @@
+<body>
+
+    <script>
+
+        const animals = ['🐶', '🐱', '🐷'];
+        console.log(animals);
+        console.log(animals.length);
+        console.log(animals[0], animals[2]);
+        console.log(animals[3]); // undefined
+        console.log(animals[animals.length - 1]); // last
+
+        delete animals[1];// Index 1인 고양이를 지워도 강아지나 돼지의 index 값이 바뀌지 않고
+        // animals[1]은 현재 undefined 상태이다
+
+        // 이룬식으로 index 안에 있는 값을 indexOf를 사용해서 해당 값을 지울수 있 댜;
+        delete animals[animals.indexOf('🐶')];
+        console.log(animals);
+        
+
+// 아래 2개 다 끝에서 부터 추가하는 거신거심
+        animals.push('😀');
+        console.log(animals);
+
+        let lastIdx = animals.length;
+        animals[lastIdx]='😍';
+        console.log(animals);
+
+    </script>
+</body>

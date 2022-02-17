@@ -1,0 +1,42 @@
+<body>
+    <script> // 점수가 90인 학생 정보 찾아내기
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score; // this의 4번째 선언됨
+            }
+        }
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 28, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 66),
+            new Student('E', 18, true, 90),
+        ];/*
+        students.forEach((v)=>{
+            if(v.score==90){
+                console.log(v);
+            }
+        })*/
+        /*
+        students.find((value)=>{
+            if(value.score==90){
+                console.log(value)
+            }
+        });*/
+        let assa = students.filter((value)=>{
+            if(value.score==90){
+                return value;
+            }
+        });
+        console.log(assa);
+
+        //  강사님 답안
+        const s = students.find((student)=>{
+            return student.score==90;
+        })
+        console.log(s);
+</script>
+</body>

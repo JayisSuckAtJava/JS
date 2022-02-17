@@ -1,0 +1,37 @@
+<body>
+    <script>
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 28, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 66),
+            new Student('E', 18, true, 90),
+        ];
+        let as = students.map(v=>{
+            if(v.score>=50){
+                return v.name
+            }
+        })
+        console.log(as);
+        as.forEach(v=>console.log(v));
+        // 강사님답안.
+        const result = students.filter(v=>{
+            return v.score >=50 ? {
+                name : v.name, score : v.score
+            } : false
+        })
+        console.log(result);
+        result.forEach(v=>console.log(`이름은 : ${v.name} 이고 점수는 : ${v.score}이다.`));
+        //이렇게 하거나
+        const names=result.map((v)=>v.name);
+        console.log(names);
+    </script>
+</body>

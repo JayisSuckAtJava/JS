@@ -1,0 +1,15 @@
+<body>
+<!--  module.html 에선 main.js 를 import 해서 사용 -->
+
+
+        <!-- 새로나온 방식  type Moudle로 사용하여 export import를 정상작동 하게 만둠 -->
+    <script src="main.js" type="module">
+        // 허나 이 방식은 module로써 (인터페이스라 생각하센) main.js 에서 작성한것들은 사용 불가능함 (import만 하는 저장소)
+        run();
+    </script>
+
+    <!-- 고전적인 (구)방식 -->
+    <script src="module_ex.js"></script>
+    <script>
+    </script>
+</body>
