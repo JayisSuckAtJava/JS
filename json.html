@@ -1,0 +1,17 @@
+<body>
+    <script>
+        const obj = {
+            name : 'LuckyKing',
+            age : 18,
+            father : '김성모',
+            friends : ['전사독','풍호','지대호','분석충','백영웅']
+        }
+        // obj 를 서버로 전송시키기 위해 json 형태의 문자열로 변형
+        // 또 전송받은 json-문자열을 객체-object로 변형
+        const str = JSON.stringify(obj);
+        console.log(obj);// 원래 객체 형태
+        console.log(str);// 객체를 문자열로 변형(JSON)
+        const trans = JSON.parse(str);
+        console.log(trans);// obj와 동일하다~ 이 말이야
+    </script>
+</body>
