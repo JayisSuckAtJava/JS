@@ -1,0 +1,14 @@
+<body>
+    <h1>제목</h1>
+    <h3>클릭 횟수 : 0</h3>
+</body>
+<script>
+    const h1 = document.querySelector('h1');
+    h1.addEventListener('drag',(event)=>{event.preventDefault(); return false;})
+    let count = 0;
+    h1.addEventListener('click',()=>{
+        document.querySelector('h3').innerHTML =`클릭 횟수 : ${++count}`;
+        console.log(count)
+    })
+    
+</script>

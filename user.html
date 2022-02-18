@@ -1,0 +1,41 @@
+<body>
+    <script>
+        class UserStorage {
+            loginUser(id, password) {
+                    return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if ((id === 'java' && password === 'script') ||
+                        (id === 'call' && password === 'back')) {
+                        resolve(id);
+                    } else {
+                        reject(new Error('not found'));
+                    }
+                }, 2000);
+                    });
+            }
+            getRoles(id) {
+                    return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    if (id === 'java') {
+                        resolve({ id: 'java', role: 'admin' });
+                    } else if (id === 'call') {
+                        resolve({ id: 'call', role: 'manager' });
+                    } else {
+                        reject(new Error('no access'));
+                    }
+                }, 1000);
+                });
+            }
+        }
+        const userStorage = new UserStorage();
+        const id = 'java';
+        const password = 'script';
+
+        const user =userStorage.loginUser(id,password)
+        user.then((result)=>{alert(`야! ${result}! 반갑다 맨이야.`)  
+        return userStorage.getRoles(result);
+        }).then((result)=>{
+            alert(`다시말해! ${result.role}!`)
+        }).catch((result)=>{console.log(result+"오류다 오류!")})
+    </script>
+</body>

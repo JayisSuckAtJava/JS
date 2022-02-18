@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const h1=document.createElement('h1');
+        const text=document.createTextNode('Siba~');
+        h1.appendChild(text);
+        document.querySelector('body').appendChild(h1);
+        h1.style.backgroundColor = 'red';
+
+        let html ='<h2>SIBUANG~</h2>';
+        document.querySelector('body').innerHTML +=html;
+    /*
+        console.log(document.head);
+        console.log(document.title);
+        console.log(document.body);*/
+
+        const nodes= document.head.childNodes;
+        for(let node of nodes){
+            console.log(node)
+        }   
+         </script>
+</body>
+
+</html>

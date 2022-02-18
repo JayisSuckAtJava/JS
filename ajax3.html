@@ -1,0 +1,28 @@
+<body>
+    <iframe src=https://www.youtube.com/embed/ class="videoShow"></iframe>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const source = 'sPlbrdqWSt4';
+        document.querySelector('.videoShow').innerHTML += source;
+        const data = axios({
+            url: 'https://www.googleapis.com/youtube/v3/search',
+            method : 'get',
+            params : {
+                part : 'snippet',
+                q : '지대호',
+                maxResults : '10',
+                key : 'AIzaSyCM7VN_a33HR_6ehqD4__o5Qf6ZMxyLIg8'
+            }
+        });
+        data.then(function (result) {
+            console.log(result.data);
+            const obj = result.data;
+            const items = obj.items;
+            for(let item of items){
+                const videoId = item.id.videoId;
+                const title = item.snippet.title;
+                console.log(videoId,title);
+            }
+        });
+    </script>
+</body>

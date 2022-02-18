@@ -1,0 +1,14 @@
+<body>
+    <script>
+         const p2 =new Promise((resolve,reject)=>{
+            
+            setTimeout(()=>{resolve('씨발');},2000)
+        });
+        const p1 = async (a,b)=>{
+            return a+b;
+        }
+        p1(1,2).then((result)=>{console.log(result)})    
+        
+        console.log(p2);
+    </script>
+</body>

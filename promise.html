@@ -1,0 +1,26 @@
+<body>
+    <script>
+        // Promise 라는 기능은 콜백을 파라미터로 받음
+        // 해당 콜백에는 2개의 파라미터가 있음
+        //          성공 / 실패
+        const p =new Promise((resolve,reject)=>{
+            
+            setTimeout(()=>{resolve('씨발');},2000)
+        });
+
+        // 비동기이기에 실행~1초 간은 reject 혹은 pending 이지만
+        // Timeout이 끝나면 성공의 resolve로 변경됨
+        console.log(p);
+        // .then 은 작업 완료 후에 실행되는 기능이며
+        // 정상 작동하면 사용됨.
+        // 파라미터가 결과의 값이됨 ()
+        // resolve가 완료값이기에 완료 후에는
+        // resolve의 값이 나옴.
+        p.then((result)=>{console.log("에휴",result);});
+        // .catch는 reject를 받아 처리하는 경우임.
+        // 정상 작동 아닌 실패 발생시.
+        p.catch((error)=>{console.log(error)});
+        // .finally는 성공 실패 상관 없이 사용됨.
+        p.finally((result)=>{console.log("끝낫다"+result);})
+    </script>
+</body>

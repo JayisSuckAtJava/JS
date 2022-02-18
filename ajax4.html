@@ -1,22 +1,24 @@
 <body>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        //get 방식은 url만 있으면 됨.
+
         const data = axios({
             url: 'https://newsapi.org/v2/top-headlines',
             method : 'get',
             params : {
-                country : 'kr',
-                apiKey : '9f5baf7d9f3f42879a20d7d19d9886e4'
+                country:'kr',
+                apiKey:'fc3e5db8cc4a43b1a21dbaf16848d1a4',
+                category : 'technology'
             }
         });
         data.then(function (result) {
             console.log(result.data);
             const obj = result.data;
-            const articles = obj.articles;
-            for(let article of articles){
-                const title = article.title;
-                console.log(title);
+            const items = obj.items;
+            for(let item of items){
+                const videoId = item.id.videoId;
+                const title = item.snippet.title;
+                console.log(videoId,title);
             }
         });
     </script>

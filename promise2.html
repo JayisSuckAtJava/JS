@@ -1,0 +1,77 @@
+<body>
+    <script>
+        // 비동기 처리를 하는 과이정쓰으야
+        // 아래 코드는 1초 마다 각각 1개씩 나오는거이
+        // 허지만 비효율적이고 각각 다른 시간설정의 불편함
+      /*  const getHen=()=>{
+            setTimeout(() => {
+            console.log("닭");
+            }, 1000);
+        };
+        const getEgg=()=>{
+            setTimeout(() => {
+            console.log("알");
+            }, 2000);
+        };
+        const cook=()=>{
+            setTimeout(() => {
+            console.log("불");
+            }, 3000);
+        };
+        getHen();
+        getEgg();
+        cook();
+        // 아래는 다 같은 시간을 주고 메인함수에 다음 함수를 부르는 경우
+        // 함수에 함수에 함수를 넣는  콜백지옥임
+        const getHensS=()=>{
+            setTimeout(() => {
+            console.log("🐓");
+            getEggsS();
+            }, 1000);
+        };
+        const getEggsS=()=>{
+            setTimeout(() => {
+            console.log("🐣");
+            cooksS();
+            }, 1000);
+        };
+        const cooksS=()=>{
+            setTimeout(() => {
+            console.log("🍗");
+            }, 1000);
+        };
+        getHensS();*/
+        // promise를 사용한 경우
+        // promise를 사용하면 코드간의 의존성-결합도 떨어져서 유지보수가 좋음.
+        const getHens=()=>{
+            return new Promise((res,rej)=>{
+            setTimeout(() => {
+            return res('!');
+            }, 1000);
+            })
+        };
+        const getEggs=()=>{
+            return new Promise((res,rej)=>{
+            setTimeout(() => {
+            return res("@");
+            }, 1000);
+            })
+        };
+        const cooks=()=>{
+            return new Promise((res,rej)=>{
+            setTimeout(() => {
+            return res("#");
+            }, 1000);
+            })
+        };
+        getHens().then((result)=>{
+            console.log(result);
+            return getEggs();
+        }).then((result)=>{
+            console.log(result);
+            return cooks();
+        }).then((result)=>{
+            console.log(result);
+        })
+    </script>
+</body>

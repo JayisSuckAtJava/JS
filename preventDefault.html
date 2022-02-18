@@ -1,0 +1,24 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const imgs = document.querySelectorAll('img')
+        imgs.forEach((img) => {
+            img.addEventListener('contextmenu', (event) => {
+                event.preventDefault()
+            })
+        })
+    })
+</script>
+
+<body>
+    <img src="http://placekitten.com/300/305" alt="">
+</body>
+
+<script>
+    for(let i=0;i<10;i++){
+        setTimeout(() => {
+            
+        document.querySelector('img').setAttribute('src','http://placekitten.com/300/30'+i)
+        }, 1000);
+        console.log(i)
+    }
+</script>

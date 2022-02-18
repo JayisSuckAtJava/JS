@@ -3,14 +3,17 @@
     <script>
         //get 방식은 url만 있으면 됨.
         const data = axios({
-            url: 'http://ggoreb.com/ajax/json/data1.jsp'
+            url: 'https://www.lezhin.com/ko/ranking?genre=_all'
+            /*      C R U D , Create Read Update Delete == Post Get Put Delete 이지만 주로 사용은
+            Read만 Get 이고 나머지 다 Post로 처리함. )이유( html-form 태그에 method는 get과 post 뿐)
+            허지만 JS 에선 4개다 사용할수 있다.=> Restful
+            method : 'get',// get과 post 사용가능  Spring에서 RequestMapping _ 요청의 종류 default는 get임
+            params : { 'key' : 'value'}*/ // params Post로 요청하는 데이터의 종류와 값 설정
+            //?country=kr&apiKey=9f5baf7d9f3f42879a20d7d19d9886e4
+            // 일시에 { country : 'kr' , apiKey : '9f5baf7d9f3f42879a20d7d19d9886e4'} 이렇게되부림.
         });
         data.then(function (result) {
             console.log(result.data);
-            const obj = result.data;
-            const name = obj.name;
-            const age = obj.age;
-            console.log(name,age);
         });
     </script>
 </body>
